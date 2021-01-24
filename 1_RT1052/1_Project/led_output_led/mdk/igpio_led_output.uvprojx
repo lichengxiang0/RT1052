@@ -388,9 +388,9 @@
           <GroupName>source</GroupName>
           <Files>
             <File>
-              <FileName>gpio_led_output.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../gpio_led_output.c</FilePath>
+              <FilePath>..\..\2_user\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -601,6 +601,31 @@
               <FileName>fsl_flexspi_nor_boot.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -942,7 +967,7 @@
 </MiscControls>
               <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=1, CPU_MIMXRT1052DVL6B</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\1_lib\CMSIS\Include;..\..\1_lib\devices;..\..\1_lib\devices\MIMXRT1052;..\..\1_lib\devices\MIMXRT1052\drivers;..\..\1_lib\devices\MIMXRT1052\utilities;..\..\1_lib\devices\MIMXRT1052\utilities\io;..\..\1_lib\devices\MIMXRT1052\utilities\log;..\..\1_lib\devices\MIMXRT1052\utilities\str;..\..\1_lib\devices\MIMXRT1052\xip;..\..\led_output_led</IncludePath>
+              <IncludePath>..\..\1_lib\CMSIS\Include;..\..\1_lib\devices;..\..\1_lib\devices\MIMXRT1052;..\..\1_lib\devices\MIMXRT1052\drivers;..\..\1_lib\devices\MIMXRT1052\utilities;..\..\1_lib\devices\MIMXRT1052\utilities\io;..\..\1_lib\devices\MIMXRT1052\utilities\log;..\..\1_lib\devices\MIMXRT1052\utilities\str;..\..\1_lib\devices\MIMXRT1052\xip;..\..\led_output_led;..\..\2_user</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -993,9 +1018,9 @@
           <GroupName>source</GroupName>
           <Files>
             <File>
-              <FileName>gpio_led_output.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../gpio_led_output.c</FilePath>
+              <FilePath>..\..\2_user\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1206,6 +1231,31 @@
               <FileName>fsl_flexspi_nor_boot.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1593,9 +1643,9 @@
           <GroupName>source</GroupName>
           <Files>
             <File>
-              <FileName>gpio_led_output.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../gpio_led_output.c</FilePath>
+              <FilePath>..\..\2_user\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1806,6 +1856,31 @@
               <FileName>fsl_flexspi_nor_boot.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2192,9 +2267,9 @@
           <GroupName>source</GroupName>
           <Files>
             <File>
-              <FileName>gpio_led_output.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../gpio_led_output.c</FilePath>
+              <FilePath>..\..\2_user\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2405,6 +2480,31 @@
               <FileName>fsl_flexspi_nor_boot.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2796,9 +2896,9 @@
           <GroupName>source</GroupName>
           <Files>
             <File>
-              <FileName>gpio_led_output.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../gpio_led_output.c</FilePath>
+              <FilePath>..\..\2_user\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3009,6 +3109,31 @@
               <FileName>fsl_flexspi_nor_boot.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3395,9 +3520,9 @@
           <GroupName>source</GroupName>
           <Files>
             <File>
-              <FileName>gpio_led_output.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../gpio_led_output.c</FilePath>
+              <FilePath>..\..\2_user\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3608,6 +3733,31 @@
               <FileName>fsl_flexspi_nor_boot.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>

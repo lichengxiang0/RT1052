@@ -1,0 +1,10 @@
+flexspi_nor_debug\bsp_systick.o: ..\..\2_user\bsp_systick.c
+flexspi_nor_debug\bsp_systick.o: ..\..\2_user\bsp_systick.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\devices\MIMXRT1052\MIMXRT1052.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\CMSIS\Include\core_cm7.h
+flexspi_nor_debug\bsp_systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\CMSIS\Include\cmsis_version.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\CMSIS\Include\cmsis_compiler.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\CMSIS\Include\cmsis_armcc.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\CMSIS\Include\mpu_armv7.h
+flexspi_nor_debug\bsp_systick.o: ..\..\1_lib\devices\MIMXRT1052\system_MIMXRT1052.h
