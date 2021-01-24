@@ -3,9 +3,9 @@
 <title>Static Call Graph - [flexspi_nor_debug\igpio_led_output.out]</title></head>
 <body><HR>
 <H1>Static Call Graph for image flexspi_nor_debug\igpio_led_output.out</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Jan 24 22:18:40 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Jan 24 22:33:25 2021
 <BR><P>
-<H3>Maximum Stack Usage =        500 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        508 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; BOARD_InitDebugConsole &rArr; DbgConsole_Init &rArr; LOG_Init &rArr; IO_Init &rArr; LPUART_Init &rArr; CLOCK_ControlGate &rArr; __aeabi_assert &rArr; DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
 <P>
@@ -259,7 +259,7 @@ Global Symbols
 <P><STRONG><a name="[ad]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_mimxrt1052.o(.text)
 </UL>
-<P><STRONG><a name="[11a]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry4.o(.ARM.Collect$$$$00000003))
+<P><STRONG><a name="[119]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry4.o(.ARM.Collect$$$$00000003))
 
 <P><STRONG><a name="[de]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -269,15 +269,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[11b]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[11a]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[11c]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[11b]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[11d]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[11c]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[11e]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[11d]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[11f]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[11e]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, startup_mimxrt1052.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_mimxrt1052.o(RESET)
@@ -960,9 +960,9 @@ Global Symbols
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[120]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[11f]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[121]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[120]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[e3]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -972,7 +972,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DbgConsole_Printf
 </UL>
 
-<P><STRONG><a name="[122]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[121]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[e5]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -986,13 +986,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[123]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[122]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[e1]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[124]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[123]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[df]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
@@ -1000,7 +1000,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[125]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[124]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[e7]"></a>BOARD_BootClockRUN</STRONG> (Thumb, 598 bytes, Stack size 8 bytes, clock_config.o(i.BOARD_BootClockRUN))
 <BR><BR>[Stack]<UL><LI>Max Depth = 340<LI>Call Chain = BOARD_BootClockRUN &rArr; CLOCK_SetMux &rArr; __aeabi_assert &rArr; DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
@@ -1029,7 +1029,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetPllFreq
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetDiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_InitDebugConsole
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_uart1_init
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_InitDebugConsole
 </UL>
 
 <P><STRONG><a name="[f3]"></a>BOARD_InitDebugConsole</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, board.o(i.BOARD_InitDebugConsole))
@@ -1080,9 +1081,9 @@ Global Symbols
 <P><STRONG><a name="[ff]"></a>DbgConsole_Printf</STRONG> (Thumb, 60 bytes, Stack size 160 bytes, fsl_debug_console.o(i.DbgConsole_Printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 316<LI>Call Chain = DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StrFormatPrintf
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StrFormatPrintf
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LOG_Push
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
 </UL>
@@ -1211,7 +1212,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Init
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_uart1_init
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Init
 </UL>
 
 <P><STRONG><a name="[110]"></a>LPUART_GetInstance</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, fsl_lpuart.o(i.LPUART_GetInstance))
@@ -1234,7 +1236,8 @@ Global Symbols
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_GetInstance
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Init
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_uart1_init
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Init
 </UL>
 
 <P><STRONG><a name="[10c]"></a>LPUART_ReadBlocking</STRONG> (Thumb, 204 bytes, Stack size 32 bytes, fsl_lpuart.o(i.LPUART_ReadBlocking))
@@ -1245,7 +1248,8 @@ Global Symbols
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_GetStatusFlags
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_ClearStatusFlags
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Transfer
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Transfer
 </UL>
 
 <P><STRONG><a name="[10b]"></a>LPUART_WriteBlocking</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, fsl_lpuart.o(i.LPUART_WriteBlocking))
@@ -1254,14 +1258,15 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Transfer
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Transfer
 </UL>
 
 <P><STRONG><a name="[101]"></a>StrFormatPrintf</STRONG> (Thumb, 558 bytes, Stack size 120 bytes, fsl_str.o(i.StrFormatPrintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = StrFormatPrintf &rArr; ConvertRadixNumToString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertRadixNumToString
+<BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertRadixNumToString
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DbgConsole_Printf
 </UL>
@@ -1292,21 +1297,21 @@ Global Symbols
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_SetDiv
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DbgConsole_Init
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_EnableClock
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_WriteBlocking
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_ReadBlocking
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_EnableClock
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LOG_Push
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_Init
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_WriteBlocking
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_ReadBlocking
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_Init
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_GetInstance
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_GetDefaultConfig
 </UL>
 
-<P><STRONG><a name="[126]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[125]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[127]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[126]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[128]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[127]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[116]"></a>bsp_led_init</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, bsp_led.o(i.bsp_led_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 388<LI>Call Chain = bsp_led_init &rArr; GPIO_PinInit &rArr; CLOCK_EnableClock &rArr; __aeabi_assert &rArr; DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
@@ -1317,24 +1322,24 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[117]"></a>delay_ms</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, bsp_systick.o(i.delay_ms))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = delay_ms
+<P><STRONG><a name="[117]"></a>bsp_uart1_init</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, bsp_uart.o(i.bsp_uart1_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 428<LI>Call Chain = bsp_uart1_init &rArr; LPUART_Init &rArr; CLOCK_ControlGate &rArr; __aeabi_assert &rArr; DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DebugConsoleSrcFreq
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_Init
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_GetDefaultConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[118]"></a>delay_us</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, bsp_systick.o(i.delay_us))
-<BR><BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<P><STRONG><a name="[ab]"></a>main</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 508<LI>Call Chain = main &rArr; BOARD_InitDebugConsole &rArr; DbgConsole_Init &rArr; LOG_Init &rArr; IO_Init &rArr; LPUART_Init &rArr; CLOCK_ControlGate &rArr; __aeabi_assert &rArr; DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
 </UL>
-
-<P><STRONG><a name="[ab]"></a>main</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 500<LI>Call Chain = main &rArr; BOARD_InitDebugConsole &rArr; DbgConsole_Init &rArr; LOG_Init &rArr; IO_Init &rArr; LPUART_Init &rArr; CLOCK_ControlGate &rArr; __aeabi_assert &rArr; DbgConsole_Printf &rArr; StrFormatPrintf &rArr; ConvertRadixNumToString
-</UL>
-<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tick_delay_init
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tick_delay_init
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_uart1_init
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_init
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_WriteBlocking
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPUART_ReadBlocking
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_InitPins
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_InitDebugConsole
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_ConfigMPU
@@ -1342,7 +1347,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[119]"></a>tick_delay_init</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, bsp_systick.o(i.tick_delay_init))
+<P><STRONG><a name="[118]"></a>tick_delay_init</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, bsp_systick.o(i.tick_delay_init))
 <BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 <P>

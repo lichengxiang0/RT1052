@@ -24,3 +24,5 @@ flexspi_nor_debug\main.o: ..\..\led_output_led\pin_mux.h
 flexspi_nor_debug\main.o: ..\..\2_user\bsp_systick.h
 flexspi_nor_debug\main.o: ..\..\2_user\bsp_led.h
 flexspi_nor_debug\main.o: ..\..\1_lib\devices\MIMXRT1052\drivers\fsl_iomuxc.h
+flexspi_nor_debug\main.o: ..\..\2_user\bsp_uart.h
+flexspi_nor_debug\main.o: ..\..\1_lib\devices\MIMXRT1052\drivers\fsl_lpuart.h

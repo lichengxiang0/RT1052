@@ -10,7 +10,10 @@ Section Cross References
     main.o(i.main) refers to board.o(i.BOARD_InitDebugConsole) for BOARD_InitDebugConsole
     main.o(i.main) refers to bsp_systick.o(i.tick_delay_init) for tick_delay_init
     main.o(i.main) refers to bsp_led.o(i.bsp_led_init) for bsp_led_init
-    main.o(i.main) refers to bsp_systick.o(i.delay_ms) for delay_ms
+    main.o(i.main) refers to bsp_uart.o(i.bsp_uart1_init) for bsp_uart1_init
+    main.o(i.main) refers to fsl_lpuart.o(i.LPUART_WriteBlocking) for LPUART_WriteBlocking
+    main.o(i.main) refers to fsl_lpuart.o(i.LPUART_ReadBlocking) for LPUART_ReadBlocking
+    main.o(i.main) refers to main.o(.data) for txbuff
     pin_mux.o(i.BOARD_InitBootPins) refers to pin_mux.o(i.BOARD_InitPins) for BOARD_InitPins
     pin_mux.o(i.BOARD_InitPins) refers to pin_mux.o(i.CLOCK_EnableClock) for CLOCK_EnableClock
     pin_mux.o(i.BOARD_InitPins) refers to pin_mux.o(i.IOMUXC_SetPinMux) for IOMUXC_SetPinMux
@@ -197,6 +200,9 @@ Section Cross References
     bsp_led.o(i.bsp_led_init) refers to bsp_led.o(i.CLOCK_EnableClock) for CLOCK_EnableClock
     bsp_led.o(i.bsp_led_init) refers to fsl_gpio.o(i.GPIO_PinInit) for GPIO_PinInit
     bsp_led.o(i.bsp_led_init) refers to bsp_led.o(.constdata) for .constdata
+    bsp_uart.o(i.bsp_uart1_init) refers to fsl_lpuart.o(i.LPUART_GetDefaultConfig) for LPUART_GetDefaultConfig
+    bsp_uart.o(i.bsp_uart1_init) refers to board.o(i.BOARD_DebugConsoleSrcFreq) for BOARD_DebugConsoleSrcFreq
+    bsp_uart.o(i.bsp_uart1_init) refers to fsl_lpuart.o(i.LPUART_Init) for LPUART_Init
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -249,6 +255,7 @@ Removing Unused input sections from the image.
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
     Removing main.o(.rrx_text), (6 bytes).
+    Removing main.o(.bss), (20 bytes).
     Removing pin_mux.o(.rev16_text), (4 bytes).
     Removing pin_mux.o(.revsh_text), (4 bytes).
     Removing pin_mux.o(.rrx_text), (6 bytes).
@@ -370,11 +377,16 @@ Removing Unused input sections from the image.
     Removing bsp_systick.o(.rev16_text), (4 bytes).
     Removing bsp_systick.o(.revsh_text), (4 bytes).
     Removing bsp_systick.o(.rrx_text), (6 bytes).
+    Removing bsp_systick.o(i.delay_ms), (24 bytes).
+    Removing bsp_systick.o(i.delay_us), (60 bytes).
     Removing bsp_led.o(.rev16_text), (4 bytes).
     Removing bsp_led.o(.revsh_text), (4 bytes).
     Removing bsp_led.o(.rrx_text), (6 bytes).
+    Removing bsp_uart.o(.rev16_text), (4 bytes).
+    Removing bsp_uart.o(.revsh_text), (4 bytes).
+    Removing bsp_uart.o(.rrx_text), (6 bytes).
 
-127 unused section(s) (total 7998 bytes) removed from the image.
+133 unused section(s) (total 8116 bytes) removed from the image.
 
 ==============================================================================
 
@@ -386,28 +398,28 @@ Image Symbol Table
 
     ../board.c                               0x00000000   Number         0  board.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry4.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry4.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc2.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr2.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca2.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra2.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca2.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr2.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc2.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clock_config.c                        0x00000000   Number         0  clock_config.o ABSOLUTE
@@ -428,6 +440,7 @@ Image Symbol Table
     ..\..\1_lib\devices\MIMXRT1052\xip\fsl_flexspi_nor_boot.c 0x00000000   Number         0  fsl_flexspi_nor_boot.o ABSOLUTE
     ..\..\2_user\bsp_led.c                   0x00000000   Number         0  bsp_led.o ABSOLUTE
     ..\..\2_user\bsp_systick.c               0x00000000   Number         0  bsp_systick.o ABSOLUTE
+    ..\..\2_user\bsp_uart.c                  0x00000000   Number         0  bsp_uart.o ABSOLUTE
     ..\..\2_user\main.c                      0x00000000   Number         0  main.o ABSOLUTE
     ..\\..\\1_lib\\devices\\MIMXRT1052\\drivers\\fsl_clock.c 0x00000000   Number         0  fsl_clock.o ABSOLUTE
     ..\\..\\1_lib\\devices\\MIMXRT1052\\drivers\\fsl_common.c 0x00000000   Number         0  fsl_common.o ABSOLUTE
@@ -443,6 +456,7 @@ Image Symbol Table
     ..\\..\\1_lib\\devices\\MIMXRT1052\\xip\\fsl_flexspi_nor_boot.c 0x00000000   Number         0  fsl_flexspi_nor_boot.o ABSOLUTE
     ..\\..\\2_user\\bsp_led.c                0x00000000   Number         0  bsp_led.o ABSOLUTE
     ..\\..\\2_user\\bsp_systick.c            0x00000000   Number         0  bsp_systick.o ABSOLUTE
+    ..\\..\\2_user\\bsp_uart.c               0x00000000   Number         0  bsp_uart.o ABSOLUTE
     ..\\..\\2_user\\main.c                   0x00000000   Number         0  main.o ABSOLUTE
     ..\board.c                               0x00000000   Number         0  board.o ABSOLUTE
     ..\clock_config.c                        0x00000000   Number         0  clock_config.o ABSOLUTE
@@ -450,16 +464,17 @@ Image Symbol Table
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
-    .data                                    0x20000000   Section        8  fsl_clock.o(.data)
-    .data                                    0x20000008   Section        4  fsl_lpuart.o(.data)
-    s_lpuartIsr                              0x20000008   Data           4  fsl_lpuart.o(.data)
-    .data                                    0x2000000c   Section        4  system_mimxrt1052.o(.data)
-    .data                                    0x20000010   Section        8  fsl_io.o(.data)
-    s_debugConsoleIO                         0x20000010   Data           8  fsl_io.o(.data)
-    .data                                    0x20000018   Section        4  bsp_systick.o(.data)
-    fac_us                                   0x20000018   Data           4  bsp_systick.o(.data)
-    .bss                                     0x2000001c   Section       36  fsl_lpuart.o(.bss)
-    s_lpuartHandle                           0x2000001c   Data          36  fsl_lpuart.o(.bss)
+    .data                                    0x20000000   Section       67  main.o(.data)
+    .data                                    0x20000044   Section        8  fsl_clock.o(.data)
+    .data                                    0x2000004c   Section        4  fsl_lpuart.o(.data)
+    s_lpuartIsr                              0x2000004c   Data           4  fsl_lpuart.o(.data)
+    .data                                    0x20000050   Section        4  system_mimxrt1052.o(.data)
+    .data                                    0x20000054   Section        8  fsl_io.o(.data)
+    s_debugConsoleIO                         0x20000054   Data           8  fsl_io.o(.data)
+    .data                                    0x2000005c   Section        4  bsp_systick.o(.data)
+    fac_us                                   0x2000005c   Data           4  bsp_systick.o(.data)
+    .bss                                     0x20000060   Section       36  fsl_lpuart.o(.bss)
+    s_lpuartHandle                           0x20000060   Data          36  fsl_lpuart.o(.bss)
     .boot_hdr.conf                           0x60000000   Section      512  evkbimxrt1050_flexspi_nor_config.o(.boot_hdr.conf)
     .boot_hdr.ivt                            0x60001000   Section       32  fsl_flexspi_nor_boot.o(.boot_hdr.ivt)
     .boot_hdr.boot_data                      0x60001020   Section       16  fsl_flexspi_nor_boot.o(.boot_hdr.boot_data)
@@ -560,20 +575,19 @@ Image Symbol Table
     i.__scatterload_null                     0x6000459e   Section        2  handlers.o(i.__scatterload_null)
     i.__scatterload_zeroinit                 0x600045a0   Section       14  handlers.o(i.__scatterload_zeroinit)
     i.bsp_led_init                           0x600045b0   Section        0  bsp_led.o(i.bsp_led_init)
-    i.delay_ms                               0x60004604   Section        0  bsp_systick.o(i.delay_ms)
-    i.delay_us                               0x6000461c   Section        0  bsp_systick.o(i.delay_us)
-    i.main                                   0x60004658   Section        0  main.o(i.main)
-    i.tick_delay_init                        0x60004690   Section        0  bsp_systick.o(i.tick_delay_init)
-    .constdata                               0x600046ac   Section       26  clock_config.o(.constdata)
-    .constdata                               0x600046c8   Section       16  fsl_clock.o(.constdata)
-    .constdata                               0x600046d8   Section       36  fsl_gpio.o(.constdata)
-    s_gpioBases                              0x600046d8   Data          24  fsl_gpio.o(.constdata)
-    s_gpioClock                              0x600046f0   Data          12  fsl_gpio.o(.constdata)
-    .constdata                               0x600046fc   Section       72  fsl_lpuart.o(.constdata)
-    s_lpuartBases                            0x600046fc   Data          36  fsl_lpuart.o(.constdata)
-    s_lpuartIRQ                              0x60004720   Data          18  fsl_lpuart.o(.constdata)
-    s_lpuartClock                            0x60004732   Data          18  fsl_lpuart.o(.constdata)
-    .constdata                               0x60004744   Section        3  bsp_led.o(.constdata)
+    i.bsp_uart1_init                         0x60004604   Section        0  bsp_uart.o(i.bsp_uart1_init)
+    i.main                                   0x60004634   Section        0  main.o(i.main)
+    i.tick_delay_init                        0x60004684   Section        0  bsp_systick.o(i.tick_delay_init)
+    .constdata                               0x600046a0   Section       26  clock_config.o(.constdata)
+    .constdata                               0x600046bc   Section       16  fsl_clock.o(.constdata)
+    .constdata                               0x600046cc   Section       36  fsl_gpio.o(.constdata)
+    s_gpioBases                              0x600046cc   Data          24  fsl_gpio.o(.constdata)
+    s_gpioClock                              0x600046e4   Data          12  fsl_gpio.o(.constdata)
+    .constdata                               0x600046f0   Section       72  fsl_lpuart.o(.constdata)
+    s_lpuartBases                            0x600046f0   Data          36  fsl_lpuart.o(.constdata)
+    s_lpuartIRQ                              0x60004714   Data          18  fsl_lpuart.o(.constdata)
+    s_lpuartClock                            0x60004726   Data          18  fsl_lpuart.o(.constdata)
+    .constdata                               0x60004738   Section        3  bsp_led.o(.constdata)
 
     Global Symbols
 
@@ -587,11 +601,12 @@ Image Symbol Table
     _clock_init                               - Undefined Weak Reference
     _microlib_exit                            - Undefined Weak Reference
     __Vectors_Size                           0x00000400   Number         0  startup_mimxrt1052.o ABSOLUTE
-    g_xtalFreq                               0x20000000   Data           4  fsl_clock.o(.data)
-    g_rtcXtalFreq                            0x20000004   Data           4  fsl_clock.o(.data)
-    SystemCoreClock                          0x2000000c   Data           4  system_mimxrt1052.o(.data)
-    Image$$ARM_LIB_HEAP$$ZI$$Base            0x20000040   Number         0  anon$$obj.o ABSOLUTE
-    Image$$ARM_LIB_HEAP$$ZI$$Limit           0x20000440   Number         0  anon$$obj.o ABSOLUTE
+    txbuff                                   0x20000000   Data          67  main.o(.data)
+    g_xtalFreq                               0x20000044   Data           4  fsl_clock.o(.data)
+    g_rtcXtalFreq                            0x20000048   Data           4  fsl_clock.o(.data)
+    SystemCoreClock                          0x20000050   Data           4  system_mimxrt1052.o(.data)
+    Image$$ARM_LIB_HEAP$$ZI$$Base            0x20000084   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ARM_LIB_HEAP$$ZI$$Limit           0x20000484   Number         0  anon$$obj.o ABSOLUTE
     Image$$ARM_LIB_STACK$$ZI$$Limit          0x20020000   Number         0  anon$$obj.o ABSOLUTE
     Image$$RW_m_config_text$$Base            0x60000000   Number         0  anon$$obj.o ABSOLUTE
     hyperflash_config                        0x60000000   Data         512  evkbimxrt1050_flexspi_nor_config.o(.boot_hdr.conf)
@@ -875,15 +890,14 @@ Image Symbol Table
     __scatterload_null                       0x6000459f   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x600045a1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
     bsp_led_init                             0x600045b1   Thumb Code    66  bsp_led.o(i.bsp_led_init)
-    delay_ms                                 0x60004605   Thumb Code    24  bsp_systick.o(i.delay_ms)
-    delay_us                                 0x6000461d   Thumb Code    54  bsp_systick.o(i.delay_us)
-    main                                     0x60004659   Thumb Code    52  main.o(i.main)
-    tick_delay_init                          0x60004691   Thumb Code    22  bsp_systick.o(i.tick_delay_init)
-    armPllConfig_BOARD_BootClockRUN          0x600046ac   Data           8  clock_config.o(.constdata)
-    sysPllConfig_BOARD_BootClockRUN          0x600046b4   Data          16  clock_config.o(.constdata)
-    usb1PllConfig_BOARD_BootClockRUN         0x600046c4   Data           2  clock_config.o(.constdata)
-    Region$$Table$$Base                      0x60004748   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x60004768   Number         0  anon$$obj.o(Region$$Table)
+    bsp_uart1_init                           0x60004605   Thumb Code    44  bsp_uart.o(i.bsp_uart1_init)
+    main                                     0x60004635   Thumb Code    72  main.o(i.main)
+    tick_delay_init                          0x60004685   Thumb Code    22  bsp_systick.o(i.tick_delay_init)
+    armPllConfig_BOARD_BootClockRUN          0x600046a0   Data           8  clock_config.o(.constdata)
+    sysPllConfig_BOARD_BootClockRUN          0x600046a8   Data          16  clock_config.o(.constdata)
+    usb1PllConfig_BOARD_BootClockRUN         0x600046b8   Data           2  clock_config.o(.constdata)
+    Region$$Table$$Base                      0x6000473c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x6000475c   Number         0  anon$$obj.o(Region$$Table)
 
 
 
@@ -899,7 +913,7 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x60000000   0x60000000   0x00000200   Data   RO         1206    .boot_hdr.conf      evkbimxrt1050_flexspi_nor_config.o
+    0x60000000   0x60000000   0x00000200   Data   RO         1216    .boot_hdr.conf      evkbimxrt1050_flexspi_nor_config.o
 
 
 
@@ -909,34 +923,36 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x60001000   0x60001000   0x00000020   Data   RO         1243    .boot_hdr.ivt       fsl_flexspi_nor_boot.o
-    0x60001020   0x60001020   0x00000010   Data   RO         1242    .boot_hdr.boot_data  fsl_flexspi_nor_boot.o
-    0x60001030   0x60001030   0x00000430   Data   RO         1227    .boot_hdr.dcd_data  evkbimxrt1050_sdram_ini_dcd.o
+    0x60001000   0x60001000   0x00000020   Data   RO         1253    .boot_hdr.ivt       fsl_flexspi_nor_boot.o
+    0x60001020   0x60001020   0x00000010   Data   RO         1252    .boot_hdr.boot_data  fsl_flexspi_nor_boot.o
+    0x60001030   0x60001030   0x00000430   Data   RO         1237    .boot_hdr.dcd_data  evkbimxrt1050_sdram_ini_dcd.o
 
 
 
-  Load Region LR_m_text (Base: 0x60002000, Size: 0x00002784, Max: 0x63fffc00, ABSOLUTE)
+  Load Region LR_m_text (Base: 0x60002000, Size: 0x000027bc, Max: 0x63fffc00, ABSOLUTE)
 
-    Execution Region RW_m_data (Exec base: 0x20000000, Load base: 0x60004768, Size: 0x00000040, Max: 0x0001f800, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x60004768   0x00000008   Data   RW          325    .data               fsl_clock.o
-    0x20000008   0x60004770   0x00000004   Data   RW          641    .data               fsl_lpuart.o
-    0x2000000c   0x60004774   0x00000004   Data   RW          856    .data               system_mimxrt1052.o
-    0x20000010   0x60004778   0x00000008   Data   RW          916    .data               fsl_io.o
-    0x20000018   0x60004780   0x00000004   Data   RW         1271    .data               bsp_systick.o
-    0x2000001c        -       0x00000024   Zero   RW          639    .bss                fsl_lpuart.o
-
-
-    Execution Region ARM_LIB_HEAP (Exec base: 0x20000040, Load base: 0x60004784, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+    Execution Region RW_m_data (Exec base: 0x20000000, Load base: 0x6000475c, Size: 0x00000084, Max: 0x0001f800, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000040        -       0x00000400   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+    0x20000000   0x6000475c   0x00000043   Data   RW            8    .data               main.o
+    0x20000043   0x6000479f   0x00000001   PAD
+    0x20000044   0x600047a0   0x00000008   Data   RW          335    .data               fsl_clock.o
+    0x2000004c   0x600047a8   0x00000004   Data   RW          651    .data               fsl_lpuart.o
+    0x20000050   0x600047ac   0x00000004   Data   RW          866    .data               system_mimxrt1052.o
+    0x20000054   0x600047b0   0x00000008   Data   RW          926    .data               fsl_io.o
+    0x2000005c   0x600047b8   0x00000004   Data   RW         1281    .data               bsp_systick.o
+    0x20000060        -       0x00000024   Zero   RW          649    .bss                fsl_lpuart.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x2001fc00, Load base: 0x60004784, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+    Execution Region ARM_LIB_HEAP (Exec base: 0x20000084, Load base: 0x600047bc, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000084        -       0x00000400   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+
+
+    Execution Region ARM_LIB_STACK (Exec base: 0x2001fc00, Load base: 0x600047bc, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -947,108 +963,107 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x60002000   0x60002000   0x00000400   Data   RO          904    RESET               startup_mimxrt1052.o
+    0x60002000   0x60002000   0x00000400   Data   RO          914    RESET               startup_mimxrt1052.o
 
 
-    Execution Region ER_m_text (Exec base: 0x60002400, Load base: 0x60002400, Size: 0x00002368, Max: 0x03ffdc00, ABSOLUTE)
+    Execution Region ER_m_text (Exec base: 0x60002400, Load base: 0x60002400, Size: 0x0000235c, Max: 0x03ffdc00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x60002400   0x60002400   0x00000000   Code   RO         1340  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x60002400   0x60002400   0x00000004   Code   RO         1377    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
-    0x60002404   0x60002404   0x00000004   Code   RO         1380    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x60002408   0x60002408   0x00000000   Code   RO         1382    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x60002408   0x60002408   0x00000000   Code   RO         1384    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x60002408   0x60002408   0x00000008   Code   RO         1385    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x60002410   0x60002410   0x00000000   Code   RO         1387    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x60002410   0x60002410   0x00000000   Code   RO         1389    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x60002410   0x60002410   0x00000004   Code   RO         1378    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
-    0x60002414   0x60002414   0x000001bc   Code   RO          905    .text               startup_mimxrt1052.o
-    0x600025d0   0x600025d0   0x00000062   Code   RO         1343    .text               mc_w.l(uldiv.o)
-    0x60002632   0x60002632   0x00000024   Code   RO         1345    .text               mc_w.l(memseta.o)
-    0x60002656   0x60002656   0x0000000e   Code   RO         1347    .text               mc_w.l(strlen.o)
-    0x60002664   0x60002664   0x0000001e   Code   RO         1391    .text               mc_w.l(llshl.o)
-    0x60002682   0x60002682   0x00000020   Code   RO         1393    .text               mc_w.l(llushr.o)
+    0x60002400   0x60002400   0x00000000   Code   RO         1377  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x60002400   0x60002400   0x00000004   Code   RO         1414    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
+    0x60002404   0x60002404   0x00000004   Code   RO         1417    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x60002408   0x60002408   0x00000000   Code   RO         1419    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x60002408   0x60002408   0x00000000   Code   RO         1421    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x60002408   0x60002408   0x00000008   Code   RO         1422    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x60002410   0x60002410   0x00000000   Code   RO         1424    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x60002410   0x60002410   0x00000000   Code   RO         1426    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x60002410   0x60002410   0x00000004   Code   RO         1415    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
+    0x60002414   0x60002414   0x000001bc   Code   RO          915    .text               startup_mimxrt1052.o
+    0x600025d0   0x600025d0   0x00000062   Code   RO         1380    .text               mc_w.l(uldiv.o)
+    0x60002632   0x60002632   0x00000024   Code   RO         1382    .text               mc_w.l(memseta.o)
+    0x60002656   0x60002656   0x0000000e   Code   RO         1384    .text               mc_w.l(strlen.o)
+    0x60002664   0x60002664   0x0000001e   Code   RO         1428    .text               mc_w.l(llshl.o)
+    0x60002682   0x60002682   0x00000020   Code   RO         1430    .text               mc_w.l(llushr.o)
     0x600026a2   0x600026a2   0x00000002   PAD
-    0x600026a4   0x600026a4   0x00000024   Code   RO         1401    .text               mc_w.l(init.o)
-    0x600026c8   0x600026c8   0x000002f4   Code   RO          238    i.BOARD_BootClockRUN  clock_config.o
-    0x600029bc   0x600029bc   0x000001b4   Code   RO          164    i.BOARD_ConfigMPU   board.o
-    0x60002b70   0x60002b70   0x00000078   Code   RO          165    i.BOARD_DebugConsoleSrcFreq  board.o
-    0x60002be8   0x60002be8   0x0000001c   Code   RO          166    i.BOARD_InitDebugConsole  board.o
-    0x60002c04   0x60002c04   0x00000070   Code   RO          110    i.BOARD_InitPins    pin_mux.o
-    0x60002c74   0x60002c74   0x00000080   Code   RO          603    i.CLOCK_ControlGate  fsl_lpuart.o
-    0x60002cf4   0x60002cf4   0x00000088   Code   RO          111    i.CLOCK_EnableClock  pin_mux.o
-    0x60002d7c   0x60002d7c   0x00000088   Code   RO          552    i.CLOCK_EnableClock  fsl_gpio.o
-    0x60002e04   0x60002e04   0x00000088   Code   RO         1306    i.CLOCK_EnableClock  bsp_led.o
-    0x60002e8c   0x60002e8c   0x00000020   Code   RO          167    i.CLOCK_GetDiv      board.o
-    0x60002eac   0x60002eac   0x00000020   Code   RO          307    i.CLOCK_GetOscFreq  fsl_clock.o
-    0x60002ecc   0x60002ecc   0x0000022c   Code   RO          309    i.CLOCK_GetPllFreq  fsl_clock.o
-    0x600030f8   0x600030f8   0x00000058   Code   RO          312    i.CLOCK_InitArmPll  fsl_clock.o
-    0x60003150   0x60003150   0x00000058   Code   RO          318    i.CLOCK_InitSysPll  fsl_clock.o
-    0x600031a8   0x600031a8   0x000000bc   Code   RO          240    i.CLOCK_SetDiv      clock_config.o
-    0x60003264   0x60003264   0x000000bc   Code   RO          241    i.CLOCK_SetMux      clock_config.o
-    0x60003320   0x60003320   0x000000a8   Code   RO         1036    i.ConvertRadixNumToString  fsl_str.o
-    0x600033c8   0x600033c8   0x00000098   Code   RO         1119    i.DbgConsole_Init   fsl_debug_console.o
-    0x60003460   0x60003460   0x00000040   Code   RO         1120    i.DbgConsole_Printf  fsl_debug_console.o
-    0x600034a0   0x600034a0   0x0000003e   Code   RO         1122    i.DbgConsole_RelocateLog  fsl_debug_console.o
+    0x600026a4   0x600026a4   0x00000024   Code   RO         1438    .text               mc_w.l(init.o)
+    0x600026c8   0x600026c8   0x000002f4   Code   RO          248    i.BOARD_BootClockRUN  clock_config.o
+    0x600029bc   0x600029bc   0x000001b4   Code   RO          174    i.BOARD_ConfigMPU   board.o
+    0x60002b70   0x60002b70   0x00000078   Code   RO          175    i.BOARD_DebugConsoleSrcFreq  board.o
+    0x60002be8   0x60002be8   0x0000001c   Code   RO          176    i.BOARD_InitDebugConsole  board.o
+    0x60002c04   0x60002c04   0x00000070   Code   RO          120    i.BOARD_InitPins    pin_mux.o
+    0x60002c74   0x60002c74   0x00000080   Code   RO          613    i.CLOCK_ControlGate  fsl_lpuart.o
+    0x60002cf4   0x60002cf4   0x00000088   Code   RO          121    i.CLOCK_EnableClock  pin_mux.o
+    0x60002d7c   0x60002d7c   0x00000088   Code   RO          562    i.CLOCK_EnableClock  fsl_gpio.o
+    0x60002e04   0x60002e04   0x00000088   Code   RO         1316    i.CLOCK_EnableClock  bsp_led.o
+    0x60002e8c   0x60002e8c   0x00000020   Code   RO          177    i.CLOCK_GetDiv      board.o
+    0x60002eac   0x60002eac   0x00000020   Code   RO          317    i.CLOCK_GetOscFreq  fsl_clock.o
+    0x60002ecc   0x60002ecc   0x0000022c   Code   RO          319    i.CLOCK_GetPllFreq  fsl_clock.o
+    0x600030f8   0x600030f8   0x00000058   Code   RO          322    i.CLOCK_InitArmPll  fsl_clock.o
+    0x60003150   0x60003150   0x00000058   Code   RO          328    i.CLOCK_InitSysPll  fsl_clock.o
+    0x600031a8   0x600031a8   0x000000bc   Code   RO          250    i.CLOCK_SetDiv      clock_config.o
+    0x60003264   0x60003264   0x000000bc   Code   RO          251    i.CLOCK_SetMux      clock_config.o
+    0x60003320   0x60003320   0x000000a8   Code   RO         1046    i.ConvertRadixNumToString  fsl_str.o
+    0x600033c8   0x600033c8   0x00000098   Code   RO         1129    i.DbgConsole_Init   fsl_debug_console.o
+    0x60003460   0x60003460   0x00000040   Code   RO         1130    i.DbgConsole_Printf  fsl_debug_console.o
+    0x600034a0   0x600034a0   0x0000003e   Code   RO         1132    i.DbgConsole_RelocateLog  fsl_debug_console.o
     0x600034de   0x600034de   0x00000002   PAD
-    0x600034e0   0x600034e0   0x0000008c   Code   RO          553    i.GPIO_GetInstance  fsl_gpio.o
-    0x6000356c   0x6000356c   0x00000060   Code   RO          554    i.GPIO_PinInit      fsl_gpio.o
-    0x600035cc   0x600035cc   0x0000008a   Code   RO          555    i.GPIO_PinSetInterruptConfig  fsl_gpio.o
+    0x600034e0   0x600034e0   0x0000008c   Code   RO          563    i.GPIO_GetInstance  fsl_gpio.o
+    0x6000356c   0x6000356c   0x00000060   Code   RO          564    i.GPIO_PinInit      fsl_gpio.o
+    0x600035cc   0x600035cc   0x0000008a   Code   RO          565    i.GPIO_PinSetInterruptConfig  fsl_gpio.o
     0x60003656   0x60003656   0x00000002   PAD
-    0x60003658   0x60003658   0x00000074   Code   RO          556    i.GPIO_PinWrite     fsl_gpio.o
-    0x600036cc   0x600036cc   0x0000000c   Code   RO          112    i.IOMUXC_SetPinConfig  pin_mux.o
-    0x600036d8   0x600036d8   0x0000001a   Code   RO          113    i.IOMUXC_SetPinMux  pin_mux.o
+    0x60003658   0x60003658   0x00000074   Code   RO          566    i.GPIO_PinWrite     fsl_gpio.o
+    0x600036cc   0x600036cc   0x0000000c   Code   RO          122    i.IOMUXC_SetPinConfig  pin_mux.o
+    0x600036d8   0x600036d8   0x0000001a   Code   RO          123    i.IOMUXC_SetPinMux  pin_mux.o
     0x600036f2   0x600036f2   0x00000002   PAD
-    0x600036f4   0x600036f4   0x000000cc   Code   RO          913    i.IO_Init           fsl_io.o
-    0x600037c0   0x600037c0   0x00000044   Code   RO          914    i.IO_Transfer       fsl_io.o
-    0x60003804   0x60003804   0x00000024   Code   RO          966    i.LOG_Init          fsl_log.o
-    0x60003828   0x60003828   0x00000022   Code   RO          967    i.LOG_Pop           fsl_log.o
+    0x600036f4   0x600036f4   0x000000cc   Code   RO          923    i.IO_Init           fsl_io.o
+    0x600037c0   0x600037c0   0x00000044   Code   RO          924    i.IO_Transfer       fsl_io.o
+    0x60003804   0x60003804   0x00000024   Code   RO          976    i.LOG_Init          fsl_log.o
+    0x60003828   0x60003828   0x00000022   Code   RO          977    i.LOG_Pop           fsl_log.o
     0x6000384a   0x6000384a   0x00000002   PAD
-    0x6000384c   0x6000384c   0x00000064   Code   RO          968    i.LOG_Push          fsl_log.o
-    0x600038b0   0x600038b0   0x0000001c   Code   RO          604    i.LPUART1_DriverIRQHandler  fsl_lpuart.o
-    0x600038cc   0x600038cc   0x0000001c   Code   RO          605    i.LPUART2_DriverIRQHandler  fsl_lpuart.o
-    0x600038e8   0x600038e8   0x0000001c   Code   RO          606    i.LPUART3_DriverIRQHandler  fsl_lpuart.o
-    0x60003904   0x60003904   0x0000001c   Code   RO          607    i.LPUART4_DriverIRQHandler  fsl_lpuart.o
-    0x60003920   0x60003920   0x0000001c   Code   RO          608    i.LPUART5_DriverIRQHandler  fsl_lpuart.o
-    0x6000393c   0x6000393c   0x0000001c   Code   RO          609    i.LPUART6_DriverIRQHandler  fsl_lpuart.o
-    0x60003958   0x60003958   0x0000001c   Code   RO          610    i.LPUART7_DriverIRQHandler  fsl_lpuart.o
-    0x60003974   0x60003974   0x0000001c   Code   RO          611    i.LPUART8_DriverIRQHandler  fsl_lpuart.o
-    0x60003990   0x60003990   0x00000058   Code   RO          612    i.LPUART_ClearStatusFlags  fsl_lpuart.o
-    0x600039e8   0x600039e8   0x00000078   Code   RO          616    i.LPUART_GetDefaultConfig  fsl_lpuart.o
-    0x60003a60   0x60003a60   0x00000090   Code   RO          618    i.LPUART_GetInstance  fsl_lpuart.o
-    0x60003af0   0x60003af0   0x00000010   Code   RO          619    i.LPUART_GetStatusFlags  fsl_lpuart.o
-    0x60003b00   0x60003b00   0x00000300   Code   RO          620    i.LPUART_Init       fsl_lpuart.o
-    0x60003e00   0x60003e00   0x00000108   Code   RO          621    i.LPUART_ReadBlocking  fsl_lpuart.o
-    0x60003f08   0x60003f08   0x00000074   Code   RO          637    i.LPUART_WriteBlocking  fsl_lpuart.o
-    0x60003f7c   0x60003f7c   0x000000a0   Code   RO          168    i.SCB_DisableDCache  board.o
-    0x6000401c   0x6000401c   0x0000009c   Code   RO          169    i.SCB_EnableDCache  board.o
-    0x600040b8   0x600040b8   0x0000009c   Code   RO          851    i.SCB_EnableDCache  system_mimxrt1052.o
-    0x60004154   0x60004154   0x0000007c   Code   RO          170    i.SCB_EnableICache  board.o
-    0x600041d0   0x600041d0   0x0000007c   Code   RO          852    i.SCB_EnableICache  system_mimxrt1052.o
-    0x6000424c   0x6000424c   0x0000022e   Code   RO         1038    i.StrFormatPrintf   fsl_str.o
+    0x6000384c   0x6000384c   0x00000064   Code   RO          978    i.LOG_Push          fsl_log.o
+    0x600038b0   0x600038b0   0x0000001c   Code   RO          614    i.LPUART1_DriverIRQHandler  fsl_lpuart.o
+    0x600038cc   0x600038cc   0x0000001c   Code   RO          615    i.LPUART2_DriverIRQHandler  fsl_lpuart.o
+    0x600038e8   0x600038e8   0x0000001c   Code   RO          616    i.LPUART3_DriverIRQHandler  fsl_lpuart.o
+    0x60003904   0x60003904   0x0000001c   Code   RO          617    i.LPUART4_DriverIRQHandler  fsl_lpuart.o
+    0x60003920   0x60003920   0x0000001c   Code   RO          618    i.LPUART5_DriverIRQHandler  fsl_lpuart.o
+    0x6000393c   0x6000393c   0x0000001c   Code   RO          619    i.LPUART6_DriverIRQHandler  fsl_lpuart.o
+    0x60003958   0x60003958   0x0000001c   Code   RO          620    i.LPUART7_DriverIRQHandler  fsl_lpuart.o
+    0x60003974   0x60003974   0x0000001c   Code   RO          621    i.LPUART8_DriverIRQHandler  fsl_lpuart.o
+    0x60003990   0x60003990   0x00000058   Code   RO          622    i.LPUART_ClearStatusFlags  fsl_lpuart.o
+    0x600039e8   0x600039e8   0x00000078   Code   RO          626    i.LPUART_GetDefaultConfig  fsl_lpuart.o
+    0x60003a60   0x60003a60   0x00000090   Code   RO          628    i.LPUART_GetInstance  fsl_lpuart.o
+    0x60003af0   0x60003af0   0x00000010   Code   RO          629    i.LPUART_GetStatusFlags  fsl_lpuart.o
+    0x60003b00   0x60003b00   0x00000300   Code   RO          630    i.LPUART_Init       fsl_lpuart.o
+    0x60003e00   0x60003e00   0x00000108   Code   RO          631    i.LPUART_ReadBlocking  fsl_lpuart.o
+    0x60003f08   0x60003f08   0x00000074   Code   RO          647    i.LPUART_WriteBlocking  fsl_lpuart.o
+    0x60003f7c   0x60003f7c   0x000000a0   Code   RO          178    i.SCB_DisableDCache  board.o
+    0x6000401c   0x6000401c   0x0000009c   Code   RO          179    i.SCB_EnableDCache  board.o
+    0x600040b8   0x600040b8   0x0000009c   Code   RO          861    i.SCB_EnableDCache  system_mimxrt1052.o
+    0x60004154   0x60004154   0x0000007c   Code   RO          180    i.SCB_EnableICache  board.o
+    0x600041d0   0x600041d0   0x0000007c   Code   RO          862    i.SCB_EnableICache  system_mimxrt1052.o
+    0x6000424c   0x6000424c   0x0000022e   Code   RO         1048    i.StrFormatPrintf   fsl_str.o
     0x6000447a   0x6000447a   0x00000002   PAD
-    0x6000447c   0x6000447c   0x000000cc   Code   RO          854    i.SystemInit        system_mimxrt1052.o
-    0x60004548   0x60004548   0x00000002   Code   RO          855    i.SystemInitHook    system_mimxrt1052.o
+    0x6000447c   0x6000447c   0x000000cc   Code   RO          864    i.SystemInit        system_mimxrt1052.o
+    0x60004548   0x60004548   0x00000002   Code   RO          865    i.SystemInitHook    system_mimxrt1052.o
     0x6000454a   0x6000454a   0x00000002   PAD
-    0x6000454c   0x6000454c   0x00000044   Code   RO         1092    i.__aeabi_assert    fsl_assert.o
-    0x60004590   0x60004590   0x0000000e   Code   RO         1405    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x6000459e   0x6000459e   0x00000002   Code   RO         1406    i.__scatterload_null  mc_w.l(handlers.o)
-    0x600045a0   0x600045a0   0x0000000e   Code   RO         1407    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x6000454c   0x6000454c   0x00000044   Code   RO         1102    i.__aeabi_assert    fsl_assert.o
+    0x60004590   0x60004590   0x0000000e   Code   RO         1442    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x6000459e   0x6000459e   0x00000002   Code   RO         1443    i.__scatterload_null  mc_w.l(handlers.o)
+    0x600045a0   0x600045a0   0x0000000e   Code   RO         1444    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x600045ae   0x600045ae   0x00000002   PAD
-    0x600045b0   0x600045b0   0x00000054   Code   RO         1307    i.bsp_led_init      bsp_led.o
-    0x60004604   0x60004604   0x00000018   Code   RO         1268    i.delay_ms          bsp_systick.o
-    0x6000461c   0x6000461c   0x0000003c   Code   RO         1269    i.delay_us          bsp_systick.o
-    0x60004658   0x60004658   0x00000038   Code   RO            6    i.main              main.o
-    0x60004690   0x60004690   0x0000001c   Code   RO         1270    i.tick_delay_init   bsp_systick.o
-    0x600046ac   0x600046ac   0x0000001a   Data   RO          242    .constdata          clock_config.o
-    0x600046c6   0x600046c6   0x00000002   PAD
-    0x600046c8   0x600046c8   0x00000010   Data   RO          324    .constdata          fsl_clock.o
-    0x600046d8   0x600046d8   0x00000024   Data   RO          557    .constdata          fsl_gpio.o
-    0x600046fc   0x600046fc   0x00000048   Data   RO          640    .constdata          fsl_lpuart.o
-    0x60004744   0x60004744   0x00000003   Data   RO         1308    .constdata          bsp_led.o
-    0x60004747   0x60004747   0x00000001   PAD
-    0x60004748   0x60004748   0x00000020   Data   RO         1403    Region$$Table       anon$$obj.o
+    0x600045b0   0x600045b0   0x00000054   Code   RO         1317    i.bsp_led_init      bsp_led.o
+    0x60004604   0x60004604   0x00000030   Code   RO         1353    i.bsp_uart1_init    bsp_uart.o
+    0x60004634   0x60004634   0x00000050   Code   RO            6    i.main              main.o
+    0x60004684   0x60004684   0x0000001c   Code   RO         1280    i.tick_delay_init   bsp_systick.o
+    0x600046a0   0x600046a0   0x0000001a   Data   RO          252    .constdata          clock_config.o
+    0x600046ba   0x600046ba   0x00000002   PAD
+    0x600046bc   0x600046bc   0x00000010   Data   RO          334    .constdata          fsl_clock.o
+    0x600046cc   0x600046cc   0x00000024   Data   RO          567    .constdata          fsl_gpio.o
+    0x600046f0   0x600046f0   0x00000048   Data   RO          650    .constdata          fsl_lpuart.o
+    0x60004738   0x60004738   0x00000003   Data   RO         1318    .constdata          bsp_led.o
+    0x6000473b   0x6000473b   0x00000001   PAD
+    0x6000473c   0x6000473c   0x00000020   Data   RO         1440    Region$$Table       anon$$obj.o
 
 
 ==============================================================================
@@ -1060,7 +1075,8 @@ Image component sizes
 
       1056        108          0          0          0      52417   board.o
        220         86          3          0          0      70239   bsp_led.o
-       112         12          0          4          0       1848   bsp_systick.o
+        28          6          0          4          0        722   bsp_systick.o
+        48          4          0          0          0       4941   bsp_uart.o
       1132        334         26          0          0      13339   clock_config.o
          0          0        512          0          0       6544   evkbimxrt1050_flexspi_nor_config.o
          0          0       1072          0          0        695   evkbimxrt1050_sdram_ini_dcd.o
@@ -1073,15 +1089,15 @@ Image component sizes
        170         68          0          0          0       3584   fsl_log.o
       1868        670         72          4         36      31747   fsl_lpuart.o
        726          0          0          0          0       3890   fsl_str.o
-        56          4          0          0          0    1361363   main.o
+        80          8          0         67          0    1362199   main.o
        286         76          0          0          0      81616   pin_mux.o
        444        210       1024          0          0       3192   startup_mimxrt1052.o
        486         38          0          4          0      37395   system_mimxrt1052.o
 
     ----------------------------------------------------------------------
-      8576       2128       2844         28       2084    1702462   Object Totals
+      8564       2130       2844         96       2084    1707113   Object Totals
          0          0         32          0       2048          0   (incl. Generated)
-        12          0          3          0          0          0   (incl. Padding)
+        12          0          3          1          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1123,15 +1139,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8876       2144       2844         28       2084    1697334   Grand Totals
-      8876       2144       2844         28       2084    1697334   ELF Image Totals
-      8876       2144       2844         28          0          0   ROM Totals
+      8864       2146       2844         96       2084    1702085   Grand Totals
+      8864       2146       2844         96       2084    1702085   ELF Image Totals
+      8864       2146       2844         96          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                11720 (  11.45kB)
-    Total RW  Size (RW Data + ZI Data)              2112 (   2.06kB)
-    Total ROM Size (Code + RO Data + RW Data)      11748 (  11.47kB)
+    Total RO  Size (Code + RO Data)                11708 (  11.43kB)
+    Total RW  Size (RW Data + ZI Data)              2180 (   2.13kB)
+    Total ROM Size (Code + RO Data + RW Data)      11804 (  11.53kB)
 
 ==============================================================================
 

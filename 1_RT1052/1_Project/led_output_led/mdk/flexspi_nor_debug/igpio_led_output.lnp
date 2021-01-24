@@ -19,6 +19,7 @@
 "flexspi_nor_debug\fsl_flexspi_nor_boot.o"
 "flexspi_nor_debug\bsp_systick.o"
 "flexspi_nor_debug\bsp_led.o"
+"flexspi_nor_debug\bsp_uart.o"
 --library_type=microlib --diag_suppress 6314 --strict --scatter "MIMXRT1052xxxxx_flexspi_nor.scf"
 --remove --keep=*(.boot_hdr.ivt) --keep=*(.boot_hdr.boot_data) --keep=*(.boot_hdr.dcd_data) --keep=*(.boot_hdr.conf) --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

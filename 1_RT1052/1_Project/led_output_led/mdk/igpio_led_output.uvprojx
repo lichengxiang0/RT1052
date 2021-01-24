@@ -627,6 +627,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_uart.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -1257,6 +1267,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_uart.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -1882,6 +1902,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_uart.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -2505,6 +2535,16 @@
               <FileName>bsp_led.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\2_user\bsp_led.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_uart.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3135,6 +3175,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\2_user\bsp_led.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_uart.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -3758,6 +3808,16 @@
               <FileName>bsp_led.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\2_user\bsp_led.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\2_user\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\2_user\bsp_uart.h</FilePath>
             </File>
           </Files>
         </Group>

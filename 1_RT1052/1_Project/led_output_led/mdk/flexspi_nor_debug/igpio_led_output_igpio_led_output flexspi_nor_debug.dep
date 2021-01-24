@@ -1,5 +1,5 @@
 Dependencies for Project 'igpio_led_output', Target 'igpio_led_output flexspi_nor_debug': (DO NOT MODIFY !)
-F (..\..\2_user\main.c)(0x600D81BB)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\1_lib\CMSIS\Include -I ..\..\1_lib\devices -I ..\..\1_lib\devices\MIMXRT1052 -I ..\..\1_lib\devices\MIMXRT1052\drivers -I ..\..\1_lib\devices\MIMXRT1052\utilities -I ..\..\1_lib\devices\MIMXRT1052\utilities\io -I ..\..\1_lib\devices\MIMXRT1052\utilities\log -I ..\..\1_lib\devices\MIMXRT1052\utilities\str -I ..\..\1_lib\devices\MIMXRT1052\xip -I ..\..\led_output_led -I ..\..\2_user --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I.\RTE\_igpio_led_output_flexspi_nor_debug-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1\Device\Include-D__UVISION_VERSION="527" -DCPU_MIMXRT1052DVL6B -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DXIP_BOOT_HEADER_DCD_ENABLE="1" -DCPU_MIMXRT1052DVL6B-o flexspi_nor_debug\main.o --omf_browse flexspi_nor_debug\main.crf --depend flexspi_nor_debug\main.d)
+F (..\..\2_user\main.c)(0x600D852D)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\1_lib\CMSIS\Include -I ..\..\1_lib\devices -I ..\..\1_lib\devices\MIMXRT1052 -I ..\..\1_lib\devices\MIMXRT1052\drivers -I ..\..\1_lib\devices\MIMXRT1052\utilities -I ..\..\1_lib\devices\MIMXRT1052\utilities\io -I ..\..\1_lib\devices\MIMXRT1052\utilities\log -I ..\..\1_lib\devices\MIMXRT1052\utilities\str -I ..\..\1_lib\devices\MIMXRT1052\xip -I ..\..\led_output_led -I ..\..\2_user --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I.\RTE\_igpio_led_output_flexspi_nor_debug-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1\Device\Include-D__UVISION_VERSION="527" -DCPU_MIMXRT1052DVL6B -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DXIP_BOOT_HEADER_DCD_ENABLE="1" -DCPU_MIMXRT1052DVL6B-o flexspi_nor_debug\main.o --omf_browse flexspi_nor_debug\main.crf --depend flexspi_nor_debug\main.d)
 I (..\..\led_output_led\board.h)(0x5B388E3F)
 I (..\..\led_output_led\clock_config.h)(0x5B1612A6)
 I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_common.h)(0x5B34A990)
@@ -24,6 +24,8 @@ I (..\..\led_output_led\pin_mux.h)(0x5B1612A6)
 I (..\..\2_user\bsp_systick.h)(0x600D75F5)
 I (..\..\2_user\bsp_led.h)(0x600D816A)
 I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_iomuxc.h)(0x5B34A990)
+I (..\..\2_user\bsp_uart.h)(0x600D84C1)
+I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_lpuart.h)(0x5B34A990)
 F (../pin_mux.c)(0x600D80E0)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\1_lib\CMSIS\Include -I ..\..\1_lib\devices -I ..\..\1_lib\devices\MIMXRT1052 -I ..\..\1_lib\devices\MIMXRT1052\drivers -I ..\..\1_lib\devices\MIMXRT1052\utilities -I ..\..\1_lib\devices\MIMXRT1052\utilities\io -I ..\..\1_lib\devices\MIMXRT1052\utilities\log -I ..\..\1_lib\devices\MIMXRT1052\utilities\str -I ..\..\1_lib\devices\MIMXRT1052\xip -I ..\..\led_output_led -I ..\..\2_user --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I.\RTE\_igpio_led_output_flexspi_nor_debug-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1\Device\Include-D__UVISION_VERSION="527" -DCPU_MIMXRT1052DVL6B -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DXIP_BOOT_HEADER_DCD_ENABLE="1" -DCPU_MIMXRT1052DVL6B-o flexspi_nor_debug\pin_mux.o --omf_browse flexspi_nor_debug\pin_mux.crf --depend flexspi_nor_debug\pin_mux.d)
 I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_common.h)(0x5B34A990)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599ECD2A)
@@ -361,3 +363,26 @@ I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_gpio.h)(0x5B34A990)
 I (..\..\led_output_led\pin_mux.h)(0x5B1612A6)
 I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_iomuxc.h)(0x5B34A990)
 F (..\..\2_user\bsp_led.h)(0x600D816A)()
+F (..\..\2_user\bsp_uart.c)(0x600D849F)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\1_lib\CMSIS\Include -I ..\..\1_lib\devices -I ..\..\1_lib\devices\MIMXRT1052 -I ..\..\1_lib\devices\MIMXRT1052\drivers -I ..\..\1_lib\devices\MIMXRT1052\utilities -I ..\..\1_lib\devices\MIMXRT1052\utilities\io -I ..\..\1_lib\devices\MIMXRT1052\utilities\log -I ..\..\1_lib\devices\MIMXRT1052\utilities\str -I ..\..\1_lib\devices\MIMXRT1052\xip -I ..\..\led_output_led -I ..\..\2_user --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I.\RTE\_igpio_led_output_flexspi_nor_debug-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Users\liche\AppData\Local\Arm\Packs\NXP\MIMXRT1052_DFP\10.0.1\Device\Include-D__UVISION_VERSION="527" -DCPU_MIMXRT1052DVL6B -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DXIP_BOOT_HEADER_DCD_ENABLE="1" -DCPU_MIMXRT1052DVL6B-o flexspi_nor_debug\bsp_uart.o --omf_browse flexspi_nor_debug\bsp_uart.crf --depend flexspi_nor_debug\bsp_uart.d)
+I (..\..\2_user\bsp_uart.h)(0x600D84C1)
+I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_lpuart.h)(0x5B34A990)
+I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_common.h)(0x5B34A990)
+I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599ECD2A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (..\..\1_lib\devices\MIMXRT1052\fsl_device_registers.h)(0x5B34A990)
+I (..\..\1_lib\devices\MIMXRT1052\MIMXRT1052.h)(0x5B34A990)
+I (..\..\1_lib\CMSIS\Include\core_cm7.h)(0x5B34A990)
+I (..\..\1_lib\CMSIS\Include\cmsis_version.h)(0x5B34A990)
+I (..\..\1_lib\CMSIS\Include\cmsis_compiler.h)(0x5B34A990)
+I (..\..\1_lib\CMSIS\Include\cmsis_armcc.h)(0x5B34A990)
+I (..\..\1_lib\CMSIS\Include\mpu_armv7.h)(0x5B34A990)
+I (..\..\1_lib\devices\MIMXRT1052\system_MIMXRT1052.h)(0x5B34A990)
+I (..\..\1_lib\devices\MIMXRT1052\MIMXRT1052_features.h)(0x5B459A25)
+I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_clock.h)(0x5B34A990)
+I (..\..\led_output_led\clock_config.h)(0x5B1612A6)
+I (..\..\led_output_led\board.h)(0x5B388E3F)
+I (..\..\1_lib\devices\MIMXRT1052\drivers\fsl_gpio.h)(0x5B34A990)
+F (..\..\2_user\bsp_uart.h)(0x600D84C1)()
